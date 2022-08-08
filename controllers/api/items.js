@@ -6,7 +6,7 @@ module.exports={
 }
 
 async function index(req,res){
-    const items = await (await Item.find({}).sort('name')).populate('theme').exec()
+    const items = await Item.find({}).sort('name').populate('theme').exec()
     items.sort((a,b)=> a.theme.sortOrder - b.theme.sortOrder)
     res.json(items)
 }
