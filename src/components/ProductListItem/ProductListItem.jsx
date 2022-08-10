@@ -1,5 +1,5 @@
 
-export default function ProductListItem({productItem}){
+export default function ProductListItem({productItem,handleAddToOrder}){
 return(
     <div>
         <div>{productItem.name}</div>
@@ -7,7 +7,7 @@ return(
 <span>
     ${productItem.price.toFixed(2)}
 </span>
-<button onClick={()=> console.log('clicked')}>
+<button onClick={()=> handleAddToOrder(productItem._id)}>
     Add to Cart
 </button>
         </div>
