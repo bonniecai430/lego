@@ -23,8 +23,14 @@ res.json(cart)
 }
 
 async function setItemQtyInCart(req, res) {
+    const cart= await Order.getCart(req.user._id)
+    await cart.setItemQty(req.body.itemId, req.body.newQty)
+    res.json(cart)
 }
 
 async function checkout(req, res) {
-
+const cart = await Order.getCart(req.user._id)
+cart.isPaid=true
+await cart.save()
+res.json(cart)
 }

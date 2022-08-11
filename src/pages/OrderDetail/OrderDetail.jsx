@@ -1,13 +1,15 @@
-import LineItem from "../LineItem/LineItem";
+import LineItem from "../components/LineItem/LineItem";
+import lineItem from '../../components/LineItem/LineItem'
 
-export default function OrderDetail({ order }) {
+export default function OrderDetail({ order ,handleChangeQty, handleCheckout}) {
   if (!order) return null;
 
   const lineItems = order.lineItems.map(item => 
     <LineItem 
     lineItem={item} 
     isPaid={order.isPaid} 
-    key={item._id} />
+    key={item._id}
+    handleChangeQty={handleChangeQty} />
   );
 
   return (
@@ -32,7 +34,7 @@ export default function OrderDetail({ order }) {
               ) : (
                 <button
                   className="btn-sm"
-                  onClick={() => alert("clicked")}
+                  onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >
                   CHECKOUT
