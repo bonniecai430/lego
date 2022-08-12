@@ -3,16 +3,16 @@ import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
 import ThemeList from '../../components/ThemeList/ThemeList'
 import ProductList from '../../components/ProductList/ProjectList'
-import OrderDetail from '../OrderDetail'
 import UserLogOut from '../../components/UserLogOut/UserLogOut'
-import {useNavigate} from 'react-router-dom'
+import ProductDetail from "../../components/ProductDetail/ProductDetail";
+
 
 export default function ShopPage({user,setUser}) {
   const [listItems, setListItems] = useState([]);
   const [activeTheme,setActiveTheme]=useState('')
   const [cart,setCart]=useState(null)
   const themesRef=useRef([]);
-   const navigate=useNavigate()
+
 
   useEffect(function () {
     async function getItems() {
@@ -22,45 +22,27 @@ export default function ShopPage({user,setUser}) {
       setActiveTheme((themesRef.current[0]))
     }
     getItems();
-
-    async function getCart(){
-        const cart = await ordersAPI.getCart()
-        setCart(cart)
-    }
-    getCart()
-  }, []);
-
+},[])
 async function handleAddToOrder(itemId){
-const cart = await ordersAPI.addItemToCart(itemId)
-setCart(cart)
-}
-async function handleChangeQty(itemId,newQty){
-const updatedCart = await ordersAPI.setItemQtyInCart(itemId,newQty)
-setCart(updatedCart)
-}
-async function handleCheckout(){
-    await ordersAPI.checkout();
-    navigate('/orders');
-}
+    const cart = await ordersAPI.addItemToCart(itemId)
+    setCart(cart)
+    }
 
-  return (
+
+return (
     <main>
         <aside>
             <ThemeList 
             themes={themesRef.current} 
             activeTheme={activeTheme}
             setActiveTheme={setActiveTheme}/>
-            <UserLogOut user={user} setUser={setUser} />
+            {/* <UserLogOut user={user} setUser={setUser} /> */}
         </aside>
     <ProductList 
     productItems={listItems.filter(item =>item.theme.name ===activeTheme)}
      handleAddToOrder={handleAddToOrder} 
-     
     />
-    < OrderDetail 
-    order={cart} 
-    handleChangeQty={handleChangeQty} 
-    handleCheckout={handleCheckout}/>
+  
     </main>
   )
 }

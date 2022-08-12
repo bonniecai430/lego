@@ -1,51 +1,78 @@
-import LineItem from "../components/LineItem/LineItem";
-import lineItem from '../../components/LineItem/LineItem'
+import LineItem from "../../components/LineItem/LineItem";
+import { useState ,useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
+import * as ordersAPI from "../../utilities/orders-api";
 
-export default function OrderDetail({ order ,handleChangeQty, handleCheckout}) {
-  if (!order) return null;
 
-  const lineItems = order.lineItems.map(item => 
+export default function OrderDetail() {
+  const [cart,setCart]=useState(null)
+   const navigate=useNavigate()
+
+  useEffect(function(){
+  async function getCart(){
+    const cart = await ordersAPI.getCart()
+    setCart(cart)
+}
+getCart()
+}, []);
+
+
+async function handleChangeQty(itemId,newQty){
+const updatedCart = await ordersAPI.setItemQtyInCart(itemId,newQty)
+setCart(updatedCart)
+}
+
+
+async function handleCheckout() {
+  await ordersAPI.checkout();
+  navigate('/orders');
+}
+
+
+  if (!cart) return null;
+
+  const lineItems = cart.lineItems.map(item => 
     <LineItem 
     lineItem={item} 
-    isPaid={order.isPaid} 
+    isPaid={cart.isPaid} 
     key={item._id}
-    handleChangeQty={handleChangeQty} />
+    handleChangeQty={handleChangeQty} 
+    />
   );
 
   return (
     <div >
       <div >
-        {order.isPaid ? (
+        {cart.isPaid ? (
           <span>
-            ORDER <span >{order.orderId}</span>
+            ORDER <span >{cart.orderId}</span>
           </span>
         ) : (
           <span>NEW ORDER</span>
         )}
-        <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
       <div >
         {lineItems.length ? (
           <>
             {lineItems}
             <section>
-              {order.isPaid ? (
+              {cart.isPaid ? (
                 <span >TOTAL&nbsp;&nbsp;</span>
               ) : (
                 <button
-                  className="btn-sm"
+                 
                   onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >
                   CHECKOUT
                 </button>
               )}
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
+              <span>{cart.totalQty}</span>
+              <span >${cart.orderTotal.toFixed(2)}</span>
             </section>
           </>
         ) : (
-          <div className="hungry">Nothing in the cart?</div>
+          <div >Nothing in the cart?</div>
         )}
       </div>
     </div>
