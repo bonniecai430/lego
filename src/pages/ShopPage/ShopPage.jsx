@@ -7,7 +7,7 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut'
 import ProductDetail from "../../components/ProductDetail/ProductDetail";
 
 
-export default function ShopPage({user,setUser}) {
+export default function ShopPage({user,setUser,childToParent}) {
   const [listItems, setListItems] = useState([]);
   const [activeTheme,setActiveTheme]=useState('')
   const [cart,setCart]=useState(null)
@@ -36,11 +36,10 @@ return (
             themes={themesRef.current} 
             activeTheme={activeTheme}
             setActiveTheme={setActiveTheme}/>
-            {/* <UserLogOut user={user} setUser={setUser} /> */}
         </aside>
     <ProductList 
     productItems={listItems.filter(item =>item.theme.name ===activeTheme)}
-     handleAddToOrder={handleAddToOrder} 
+     handleAddToOrder={handleAddToOrder} childToParent={childToParent}
     />
   
     </main>

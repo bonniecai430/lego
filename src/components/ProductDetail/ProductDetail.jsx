@@ -1,15 +1,13 @@
 import {useParams} from 'react-router-dom'
 
-export default function ProductDetail({productItem}){
-    const {id} =useParams()
-   console.log({productItem})
-// const productData = productItems.find(product => productItems._id===id)
+export default function ProductDetail({data,setData}){
+    
+
 return(
     <>
-    <h3>
-        123
- {/* {productData.name} */}
-    </h3>
+   <h1>
+    {data.name}
+   </h1>
     </>
 )
 

@@ -1,11 +1,12 @@
 import ProductListItem from '../../components/ProductListItem/ProductListItem'
-import ProductDetail from '../ProductDetail/ProductDetail'
-export default function ProductList({productItems,handleAddToOrder}){
+
+export default function ProductList({productItems,handleAddToOrder,childToParent}){
 const items = productItems.map(item=>
     <ProductListItem
     key={item.id}
     productItem={item}
     handleAddToOrder={handleAddToOrder}
+    childToParent={childToParent}
     /> 
     )
 

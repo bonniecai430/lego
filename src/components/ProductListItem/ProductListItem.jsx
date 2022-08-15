@@ -1,14 +1,17 @@
 import { Link } from "react-router-dom";
 import ProductDetail from '../ProductDetail/ProductDetail'
 
-export default function ProductListItem({productItem,handleAddToOrder}){
-<prductDetail productItem={productItem}/>
+export default function ProductListItem({productItem,handleAddToOrder,childToParent}){
+
 return(
     <div >
         <h3>
-            <Link to={`/product/${productItem._id}`}> {productItem.name}</Link>
+            <Link 
+            onClick={() => childToParent(productItem)}
+            to={`/product/${productItem._id}`}> {productItem.name}</Link>
             </h3>
         <div className="buy">
+            {/* <div>{productItem.image}</div> */}
 <span>
     ${productItem.price.toFixed(2)}
 </span>

@@ -21,7 +21,7 @@ const Item = require("./models/item");
 
   await Item.deleteMany({});
 const items = await Item.create([
-{name:'Nano Gauntlet',image:'',theme:themes[0],price:69.99},
+{name:'Nano Gauntlet',image:"https://www.lego.com/cdn/cs/set/assets/blt094ad51f69e44f8f/76223.png?fit=bounds&format=png&width=1200&height=1200&dpr=1",theme:themes[0],price:69.99},
 {name:"Thor's Hammer",image:'',theme:themes[0],price:54.99},
 {name:'Daily Bugle',image:'',theme:themes[0],price:349.99},
 {name:'Carnage',image:'',theme:themes[0],price:54.99},
