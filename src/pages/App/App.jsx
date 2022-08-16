@@ -9,7 +9,7 @@ import OrderDetail from "../OrderDetail/OrderDetail";
 import ProductDetail from '../../components/ProductDetail/ProductDetail'
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-
+import Footer from '../../components/Footer/Footer'
 
 
 export default function App() {
@@ -17,6 +17,8 @@ export default function App() {
   const [data,setData]=useState('')
   const childToParent = (childData) => {
   setData(childData)
+
+ 
 }
   return (
     <main className="App">
@@ -25,6 +27,7 @@ export default function App() {
         <>
         <div>
         <NavBar user={user} setUser={setUser} />
+       
         </div>
           <Routes>
             <Route path="/shop" element={< ShopPage user={user} setUser={setUser} childToParent={childToParent}/>}></Route>
@@ -36,6 +39,7 @@ export default function App() {
       ) : (
         <AuthPage setUser={setUser} />
       )}
+       <Footer user={user} setUser={setUser}/>
     </main>
   );
 }

@@ -41,7 +41,6 @@ return (
     productItems={listItems.filter(item =>item.theme.name ===activeTheme)}
      handleAddToOrder={handleAddToOrder} childToParent={childToParent}
     />
-  
     </main>
   )
 }

@@ -65,7 +65,7 @@ export default function OrderDetail() {
                     CHECKOUT
                   </button> 
                 )}
-              <br /><small>FREE Shipping with orders over $35!*</small>
+              <br /><small>FREE Shipping with orders over $50!*</small>
             </div>
           </>
         ) : (

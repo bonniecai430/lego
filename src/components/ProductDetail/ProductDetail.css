@@ -9,12 +9,56 @@
     padding: 20px;
 }
 
-.details .details-img {
-    border: 2px solid #2b6777;
-    width: 350px;
-    height: 450px;
-    margin: 20px;
+/* .details .details-img {
+   justify-content: space-between;
+    width: 450px;
+    height: 550px;
+    margin: 100px;
     background-position: 50%;
     background-size: contain;
     background-repeat: no-repeat;
+} */
+.details .details-content {
+    max-width: 500px;
+    margin: 0 20px 20px;
+}
+.details .details-content h2 {
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size: 35px;
+    margin: 10px;
+}
+.details .details-content h3 {
+    color: #c20d0d;
+    margin: 15px;
+    font-size: 30px;
+}
+
+.details .details-content p{
+
+    color: rgb(0, 133, 55);
+    font-size: 0.875rem;
+    line-height: 1.1875rem;
+    font-weight: 500;
+    text-transform: inherit;
+}
+
+
+  
+
+
+.details .details-addtocart {
+    background-color:rgb(253, 128, 36);
+    border:none;
+    color: black;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.details-addtocart:hover{
+    background-color: #fff;
 }

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ProductDetail from "../ProductDetail/ProductDetail";
 import "./ProductListItem.css";
 
 export default function ProductListItem({
