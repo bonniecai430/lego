@@ -57,3 +57,12 @@ text-decoration: none;
 .btn-sm:hover{
     background-color: #fff;
 }
+.link-styles{
+    text-decoration: none;
+    color:black;
+    font-weight: 800;
+    font-size: 20px;
+}
+.link-styles:hover{
+    color:rgb(253, 128, 36)
+}

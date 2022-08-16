@@ -15,7 +15,7 @@ export default function ProductListItem({
         <div className="products-content">
           <div className="name">
             <Link
-
+className={"link-styles"}
               onClick={() => childToParent(productItem)}
               to={`/product/${productItem._id}`}
             >
