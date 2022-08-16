@@ -3,8 +3,8 @@ import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
 import ThemeList from '../../components/ThemeList/ThemeList'
 import ProductList from '../../components/ProductList/ProjectList'
-import UserLogOut from '../../components/UserLogOut/UserLogOut'
-import ProductDetail from "../../components/ProductDetail/ProductDetail";
+// import UserLogOut from '../../components/UserLogOut/UserLogOut'
+
 
 
 export default function ShopPage({user,setUser,childToParent}) {

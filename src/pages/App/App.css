@@ -1,14 +1,9 @@
-/* *{
-  background-color: black;
-} */
+
 
 .App {
   text-align: center;
+}
 
-}
-.navBar{
-  background-color: yellow;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

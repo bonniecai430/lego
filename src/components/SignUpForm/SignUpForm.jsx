@@ -1,8 +1,11 @@
 import { Component, useState } from 'react'
 import { signUp } from '../../utilities/users-service'
-
+import './SignUpForm.css'
 export default class SignUpForm extends Component {
-    state = {
+ 
+  
+  
+  state = {
         name: '',
         email: '',
         password: '',
@@ -37,70 +40,73 @@ export default class SignUpForm extends Component {
       }
     }
 
+
     render() {
-        const disable = this.state.password !== this.state.confirm;
-        return (
-          <div>
-            <div className="form-container">
-              <form autoComplete="off" onSubmit={this.handleSubmit}>
-                <label>Name</label>
-                <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-                <label>Email</label>
-                <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-                <label>Password</label>
-                <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-                <label>Confirm</label>
-                <input type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-                <button type="submit" disabled={disable}>SIGN UP</button>
-              </form>
-            </div>
-            <p className="error-message">&nbsp;{this.state.error}</p>
+      const disable = this.state.password !== this.state.confirm;
+      return (
+        
+        <div className="Auth-form-container">
+      <form className="Auth-form" 
+      autoComplete="off" 
+      onSubmit={this.handleSubmit}>
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Sign Up</h3>
+          <img src="https://identity.lego.com/assets/images/parentAtDeskWithComputer@4x-44768ff9f5c861e8f17500ea00afea18.png" alt="" />
+          <div className="form-group mt-3">
+            <label>Full Name</label>
+            <input
+              type="text"
+              name="name" 
+              value={this.state.name} 
+              onChange={this.handleChange} required
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe"
+            />
           </div>
-        );
+          <div className="form-group mt-3">
+            <label>Email address</label>
+            <input
+              type="email"
+              name="email"
+              value={this.state.email} 
+              onChange={this.handleChange} required
+              className="form-control mt-1"
+              placeholder="Email Address"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password" 
+              value={this.state.password} 
+              onChange={this.handleChange} required
+              className="form-control mt-1"
+              placeholder="Password"
+            />
+          </div>
+          <div className="form-group mt-3">
+            <label>Confirm</label>
+            <input
+              type="password"
+              name="confirm" 
+              value={this.state.confirm} 
+              onChange={this.handleChange} required
+              className="form-control mt-1"
+              placeholder="Password"
+            />
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <p className="text-center mt-2">
+            Forgot <a href="#">password?</a>
+          </p>
+        </div>
+      </form>
+    </div>
+      );
     }
-      
-}
-
-// export default function SignUpForm() {
-//   const [formData, setFormData] = useState({
-//     name: '',
-//     email: '',
-//     password: '',
-//     confirm: '',
-//     error: ''
-//   })
-//   const disable = formData.password !== formData.confirm;
-
-//   function handleChange(evt) {
-//     setFormData({
-//       ...formData,
-//       [evt.target.name]: evt.target.value,
-//       error: ''
-//     })
-//   }
-
-//   function handleSubmit(evt) {
-//     evt.preventDefault();
-//     alert(JSON.stringify(formData));
-//   }
-
-
-//   return (
-//     <div>
-//       <div className="form-container">
-//         <form autoComplete="off" onSubmit={handleSubmit}>
-//           <label>Name</label>
-//           <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-//           <label>Email</label>
-//           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-//           <label>Password</label>
-//           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-//           <label>Confirm</label>
-//           <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
-//           <button type="submit" disabled={disable}>SIGN UP</button>
-//         </form>
-//       </div>
-//       <p className="error-message">&nbsp;{formData.error}</p>
-//     </div>
-//   );
-// }
+  }

@@ -1,5 +1,5 @@
 import ProductListItem from '../../components/ProductListItem/ProductListItem'
-
+import './ProductList.css'
 export default function ProductList({productItems,handleAddToOrder,childToParent}){
 const items = productItems.map(item=>
     <ProductListItem
@@ -11,7 +11,7 @@ const items = productItems.map(item=>
     )
 
     return(
-        <main>
+        <main className='ProductList'>
             {items}
         </main>
     )

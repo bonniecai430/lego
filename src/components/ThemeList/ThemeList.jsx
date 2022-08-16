@@ -1,4 +1,4 @@
-
+import './ThemeList.css'
 export default function ThemeList({ themes, activeTheme, setActiveTheme }) {
     const ths = themes.map(th =>
       <li
@@ -12,7 +12,7 @@ export default function ThemeList({ themes, activeTheme, setActiveTheme }) {
       </li>
     );
     return (
-      <ul >
+      <ul className='ThemeList'>
         {ths}
       </ul>
     );

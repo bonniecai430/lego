@@ -1,14 +1,26 @@
 import {useParams} from 'react-router-dom'
-
+import './ProductDetail.css'
 export default function ProductDetail({data,setData}){
     
 
 return(
-    <>
-   <h1>
+    <section>
+        <div className='details'>
+    <img className='details-img' src={data.image} />
+
+    <div>
+   <h2 >
     {data.name}
-   </h1>
-    </>
+   </h2>
+   <h3>
+   $ {data.price}
+   </h3>
+   {/* <button
+   onClick={() => handleAddToOrder(productItem._id)}
+   >Add To Cart</button> */}
+  </div>
+  </div>
+    </section>
 )
 
 }

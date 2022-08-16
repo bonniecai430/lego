@@ -1,0 +1,14 @@
+/* 
+.Auth{
+    margin-top: 60px;
+position: absolute;
+height: 80%;
+width: 100%;
+background: url(https://www.lego.com/cdn/cs/set/assets/blt6c33872e09594825/04_Tall_D.jpg?fit=crop&format=webply&quality=80&width=1600&height=700&dpr=1.5);
+background-size: cover;
+} */
+
+.Auth h1{
+    background-color:rgb(255 207 0);
+    font-family: system-ui;
+}
