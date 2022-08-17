@@ -104,6 +104,9 @@ export default class SignUpForm extends Component {
           <p className="text-center mt-2">
             Forgot <a href="#">password?</a>
           </p>
+          <p>
+            Already have an account? <a href="#">Log in</a>
+          </p>
         </div>
       </form>
     </div>
