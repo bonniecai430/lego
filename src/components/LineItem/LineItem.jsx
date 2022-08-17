@@ -1,6 +1,8 @@
 import "./LineItem.css";
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
+
+ 
   return (
     <div className="cart-box">
       <div className="card">
@@ -31,7 +33,6 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
                 +
               </button>
             )}
-            {/* <div>${lineItem.extPrice.toFixed(2)}</div> */}
           </div>
         </div>
       </div>

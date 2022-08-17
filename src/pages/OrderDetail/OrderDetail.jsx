@@ -24,6 +24,10 @@ export default function OrderDetail() {
     await ordersAPI.checkout();
     navigate("/orders");
   }
+async function handleDelete(){
+  
+}
+
 
   if (!cart) return null;
 

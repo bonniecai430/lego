@@ -7,7 +7,6 @@ module.exports={
     addToCart,
     setItemQtyInCart,
     checkout,
-
 }
 
 async function cart(req,res){
@@ -34,3 +33,8 @@ cart.isPaid=true
 await cart.save()
 res.json(cart)
 }
+
+// async function deleteItem(req,res){
+// const cart = await Order.findByIdAndDelete(req.params.id)
+// res.json(cart)
+// }

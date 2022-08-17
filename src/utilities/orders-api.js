@@ -18,3 +18,6 @@ export function setItemQtyInCart(itemId, newQty) {
   export function checkout() {
     return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
   }
+//   export function deteleItemInCart(itemId){
+//     return sendRequest(`${BASE_URL}/${itemId}`, 'PUT');
+//   }
