@@ -12,15 +12,15 @@ React Express NodeJS MongoDB JavaScript CSS HTML
 https://project4-lego.herokuapp.com/
 
 ## Unsolved Problems: 
-1.The footer's link is invaild
-2.On the detail page user can't change the number of products they need to add to their shopping cart
-3.User need to scroll down to see the login page 
+1. The footer's link is invaild
+2. On the detail page user can't change the number of products they need to add to their shopping cart
+3. User need to scroll down to see the login page 
 
 
 ## Future Enhancements:
-1.Make the footer's link work can link to their own page
-2.Add some more styling 
-3.User can switch between login and sign up form by clicking the link
+1. Make the footer's link work can link to their own page
+2. Add some more styling 
+3. User can switch between login and sign up form by clicking the link
 
 ### Trello Board
 <img width="1440" alt="Screen Shot 2022-08-16 at 1 57 42 PM" src="https://user-images.githubusercontent.com/105684279/184998099-25f9eda2-828f-46ad-850e-0ea8e9c10517.png">
