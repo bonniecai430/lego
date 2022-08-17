@@ -1,5 +1,5 @@
 ## Lego
-This is a E-Commerce App. 
+This is an E-Commerce App. 
 ## Screenshots
 ![Screen Shot 2022-08-16 at 3 37 20 PM 2 2](https://user-images.githubusercontent.com/105684279/184998028-bb8a4de5-f78d-410f-925a-c05aa0ff36f9.png)
 ![Screen Shot 2022-08-16 at 3 38 10 PM (2)](https://user-images.githubusercontent.com/105684279/184998037-0011be64-3193-495f-a39c-e1f7c20a66ab.png)
